@@ -1,0 +1,24 @@
+name: Publish to GH Pages
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: dcodeIO/setup-node-nvm@master
+      - name: Run npm install
+        run: |
+          npm install
+      - name: Perform webpack build
+        run: |
+          npx webpack build
+      - name: Publish to GH Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: dist

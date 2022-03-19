@@ -9,8 +9,10 @@ import '../img/motivation.mp4';
 import '../img/docker_logo.png';
 import '../img/gradle_logo.png';
 import '../img/tools.mp4';
-import '../img/gradle.mp4';
+import '../img/gradle.gif';
 import '../img/manifest.mp4';
+import '../img/demo.gif';
+import '../img/plugins.gif';
 
 Reveal.initialize({
     slideNumber: true,
