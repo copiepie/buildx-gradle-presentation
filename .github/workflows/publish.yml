@@ -24,3 +24,4 @@ jobs:
           target-folder: buildx-gradle-presentation
           branch: gh-pages
           folder: dist
+          token: ${{ secrets.TKN }}
