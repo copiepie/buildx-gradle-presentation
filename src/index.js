@@ -13,6 +13,9 @@ import '../img/gradle.gif';
 import '../img/manifest.mp4';
 import '../img/demo.gif';
 import '../img/plugins.gif';
+import '../img/multiplatform.gif';
+import '../img/walkthrough.gif';
+import '../img/publish.gif';
 
 Reveal.initialize({
     slideNumber: true,
