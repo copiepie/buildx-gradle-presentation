@@ -1,5 +1,8 @@
 <html>
   <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+    </style>
     <title>Buildx & Gradle</title>
   </head>
   <body>
@@ -9,35 +12,124 @@
           data-background-image="port-container.gif"
           data-background-opacity="0.6"
         >
+          <img src="docker_logo.png" width="40%" />
           <h1
             class="r-fit-text"
-            style="text-align: left; color: navy; text-shadow: black"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              text-align: left;
+              color: navy;
+              text-shadow: black;
+            "
           >
             Multiplatform Docker Images with Gradle
           </h1>
-          <hr color="navy" />
+          <img src="gradle_logo.png" width="40%" />
         </section>
         <section
           data-background-video="content.mp4"
           data-background-opacity="0.6"
           data-background-video-loop="true"
         >
-          <h2 style="color: navy; text-align: left">Contents</h2>
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Contents
+          </h2>
 
-          <p class="fragment" style="color: navy; text-align: left">
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
             Motivation
           </p>
-          <p class="fragment" style="color: navy; text-align: left">
-            Manifests
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            multiple images with the same tag
           </p>
-          <p class="fragment" style="color: navy; text-align: left">
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
             Tools (Buildkit, Buildx)
           </p>
-          <p class="fragment" style="color: navy; text-align: left">
-            Demo Demo Demo!!!
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            multiplatform builds
           </p>
-          <p class="fragment" style="color: navy; text-align: left">
-            Limitations
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            buildx demo
+          </p>
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            gradle
+          </p>
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            plugin walkthrough
+          </p>
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            publishing and the github workflow
           </p>
         </section>
         <section
@@ -45,52 +137,106 @@
           data-background-opacity="0.6"
           data-background-video-loop="true"
         >
-          <h2 style="color: navy; text-align: left">Motivation</h2>
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Motivation
+          </h2>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             There's more than x86_64
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
-            <a href="https://g.co/kgs/FLQLTm">apple's new M1 CPU</a> is arm64
-            based
+            <a href="https://g.co/kgs/FLQLTm" target="_blank"
+              >apple's new M1 CPU</a
+            >
+            is arm64 based
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             <a
               href="https://aws.amazon.com/pm/ec2-graviton/?trk=40424652-394c-43fa-bfea-8301a1898829&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Compute|EC2%20Graviton|EEM|EN|Text|EU&s_kwcid=AL!4422!3!525634705654!p!!g!!amazon%20web%20servers&ef_id=CjwKCAjwloCSBhAeEiwA3hVo_TIDmfVLYbEMO-JEDXPQYN5q0I0LSMWV_M3SYCL1Dm9jwFtNgpaZbBoCWMUQAvD_BwE:G:s&s_kwcid=AL!4422!3!525634705654!p!!g!!amazon%20web%20servers"
+              target="_blank"
               >AWS Gravitron2</a
             >
             Instances are arm64 based
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             a container built for x86_64 (amd64) won't work on arm64 (at least
             not properly)
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             Target group: Development teams using different workstations
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             we need a way to build the right image for the right platform
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             we need this to be built on a Dev's workstation and on our CI
           </p>
@@ -100,30 +246,61 @@
           data-background-opacity="0.6"
           data-background-video-loop="true"
         >
-          <h2 style="color: navy; text-align: left">
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
             Multiple images with the same tag
           </h2>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             Made possible via manifests
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             Manifests contain meta-information about an image...
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             ...which also includes the platform an image is built for
           </p>
           <p
             class="fragment"
-            style="font-size: smaller; color: navy; text-align: left"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              font-size: smaller;
+              color: navy;
+              text-align: left;
+            "
           >
             Otherwise we would need to build completely separate images per
             platform<br />
@@ -134,10 +311,20 @@
           </p>
         </section>
         <section data-background-image="demo.gif" data-background-opacity="0.6">
-          <h2 style="color: navy; text-align: left">Demo for manifestts</h2>
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Demo for manifestts
+          </h2>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
               color: navy;
               text-align: left;
               font-family: 'Courier New', Courier, monospace;
@@ -152,22 +339,46 @@
           data-background-opacity="0.6"
           data-background-video-loop="true"
         >
-          <h2 style="color: navy; text-align: left">Tools</h2>
-          <p class="fragment" style="color: navy; text-align: left">BuildKit</p>
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Tools
+          </h2>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            BuildKit
+          </p>
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
               font-style: italic;
             "
           >
-            - A project to separate the build logic
+            - A project to separate the build logic separate from the building
+            frontend
           </p>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
@@ -175,11 +386,19 @@
             "
           >
             - Builder-backend for building Docker images, can be activated via
-            DOCKER_BUILDKIT=1
+            <span
+              style="
+                font-family: 'Courier New', Courier, monospace;
+                font-style: normal;
+              "
+              >DOCKER_BUILDKIT=1</span
+            >
           </p>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
@@ -188,10 +407,22 @@
           >
             - Provides optimizations for multistage builds
           </p>
-          <p class="fragment" style="color: navy; text-align: left">buildx</p>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            buildx
+          </p>
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
@@ -203,6 +434,8 @@
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
@@ -216,10 +449,21 @@
           data-background-image="multiplatform.gif"
           data-background-opacity="0.6"
         >
-          <h2 style="color: navy; text-align: left">Multiplatform builds</h2>
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Multiplatform builds
+          </h2>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               font-size: smaller;
               color: navy;
               text-align: left;
@@ -233,6 +477,8 @@
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               font-size: smaller;
               color: navy;
               text-align: left;
@@ -246,6 +492,8 @@
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               font-size: smaller;
               color: navy;
               text-align: left;
@@ -253,13 +501,16 @@
               font-style: italic;
             "
           >
-            - A separate builder instance is needed, since multi-platform images
-            is only supported via BuildKit with docker-container driver <br />
+            - A separate builder instance is needed, since building
+            multi-platform images is only supported via BuildKit with
+            docker-container driver <br />
             <span style="font-style: italic">(Or via k8s drivers) </span>
           </p>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               font-size: smaller;
               color: navy;
               text-align: left;
@@ -270,22 +521,33 @@
             - Builder might emulate desired target architecture; or it might
             not... <br />
             In case it doesn't, additional emulation capabilities are needed via
-            <a href="https://www.qemu.org/">QEMU</a>
+            <a href="https://www.qemu.org/" target="_blank">QEMU</a>
           </p>
         </section>
 
         <section data-background-image="demo.gif" data-background-opacity="0.6">
-          <h2 style="color: navy; text-align: left">Buildx Demo</h2>
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Buildx Demo
+          </h2>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
               font-style: italic;
             "
           >
-            - Setup buildx <br />
+            - Setup buildx & QEMU <br />
             <span
               style="
                 font-family: 'Courier New', Courier, monospace;
@@ -321,16 +583,43 @@
             >
               docker buildx use
             </span>
+            <span
+              style="
+                font-family: 'Courier New', Courier, monospace;
+                font-style: normal;
+              "
+            >
+              sudo apt-get install -y qemu-static
+            </span>
+            <span
+              style="
+                font-family: 'Courier New', Courier, monospace;
+                font-style: normal;
+              "
+            >
+              sudo apt-get install -y binfmt-support
+            </span>
           </p>
         </section>
         <section
           data-background-image="gradle.gif"
           data-background-opacity="0.6"
         >
-          <h2 style="color: navy; text-align: left">Gradle</h2>
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Gradle
+          </h2>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
@@ -342,6 +631,8 @@
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
@@ -353,6 +644,8 @@
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
@@ -366,33 +659,130 @@
           data-background-image="walkthrough.gif"
           data-background-opacity="0.6"
         >
-          <h2 style="color: navy; text-align: left">Plugin walkthrough</h2>
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Plugin walkthrough
+          </h2>
           <p
             class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
               font-style: italic;
             "
           >
-            - A Gradle plugin consists out of 
-            <ol class="fragment"
+            - A Gradle plugin consists out of
+          </p>
+          <ol
+            class="fragment"
             style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
               color: navy;
               text-align: left;
               font-size: smaller;
-              font-style: italic;">
-              <li>The extension, which defines the configuration for the plugin</li>
-              <li>The plugin code itself, which might register tasks for the plugin and uses the extension </li>
-              <li>Tasks, which may be invoked in the script where the plugin is integrated</li>
-            </ol>
-          </p>
+              font-style: italic;
+            "
+          >
+            <li>
+              The extension, which defines the configuration for the plugin
+            </li>
+            <li>
+              The plugin code itself, which might register tasks for the plugin
+              and uses the extension
+            </li>
+            <li>
+              Tasks, which may be invoked in the script where the plugin is
+              integrated
+            </li>
+          </ol>
         </section>
-        <section data-background-image="publish.gif" data-background-opacity="0.6">
-          <h2 style="color: navy; text-align: left">
+        <section
+          data-background-image="publish.gif"
+          data-background-opacity="0.6"
+        >
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
             Publishing and the GitHub workflow
           </h2>
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+              font-size: smaller;
+              font-style: italic;
+            "
+          >
+            <a
+              href="https://github.com/copiepie/buildx-gradle/blob/main/.github/workflows/publish.yml"
+              target="_blank"
+              >- Publishing the plugin </a
+            ><br />
+            <span style="font-style: italic"
+              >(Happens via maven-publish plugin for gradle and is embedded in
+              the build.gradle file)</span
+            >
+          </p>
+          <p
+            class="fragment"
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+              font-size: smaller;
+              font-style: italic;
+            "
+          >
+            <a
+              href="https://github.com/copiepie/simply-spring-rest-docker-test/blob/main/.github/workflows/publish.yml"
+              target="_blank"
+              >- Publishing the example project</a
+            >
+          </p>
+        </section>
+        <section
+          data-background-image="thankyou.gif"
+          data-background-opacity="0.6"
+        >
+          <h2
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Thank you so, so much!
+          </h2>
+          <h3
+            style="
+              text-transform: lowercase;
+              font-family: Chewy, sans-serif;
+              color: navy;
+              text-align: left;
+            "
+          >
+            Questions appreciated
+          </h3>
         </section>
       </div>
     </div>
