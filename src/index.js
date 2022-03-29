@@ -17,7 +17,6 @@ import '../img/multiplatform.gif';
 import '../img/walkthrough.gif';
 import '../img/publish.gif';
 import '../img/thankyou.gif';
-import '../fonts/Yellowtail-Regular.ttf';
 
 Reveal.initialize({
     slideNumber: true,
