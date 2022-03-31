@@ -18,6 +18,9 @@ import '../img/walkthrough.gif';
 import '../img/publish.gif';
 import '../img/thankyou.gif';
 import '../img/multistage.gif';
+import '../img/Schema-Buildx-Gradle-Plugin.jpg';
+import '../img/what.gif';
+import '../img/code.gif';
 
 Reveal.initialize({
     slideNumber: true,
