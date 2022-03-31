@@ -17,6 +17,7 @@ import '../img/multiplatform.gif';
 import '../img/walkthrough.gif';
 import '../img/publish.gif';
 import '../img/thankyou.gif';
+import '../img/multistage.gif';
 
 Reveal.initialize({
     slideNumber: true,
