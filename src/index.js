@@ -21,6 +21,7 @@ import '../img/multistage.gif';
 import '../img/Schema-Buildx-Gradle-Plugin.jpg';
 import '../img/what.gif';
 import '../img/code.gif';
+import '../img/shortcomings.gif';
 
 Reveal.initialize({
     slideNumber: true,

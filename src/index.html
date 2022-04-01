@@ -870,6 +870,62 @@
               </span>
             </p>
           </section>
+          <section data-background-image="shortcomings.gif" data-background-opacity="0.6">
+            <h2
+              style="
+                text-transform: lowercase;
+                font-family: Chewy, sans-serif;
+                color: navy;
+                text-align: left;
+              "
+            >
+              shortcomings :(
+            </h2>
+            <p
+              class="fragment"
+              style="
+                text-transform: lowercase;
+                font-family: Chewy, sans-serif;
+                color: navy;
+                text-align: left;
+                font-size: smaller;
+                font-style: italic;
+              "
+            >
+              Windows not yet supported, because it can't be tested
+            </p>
+            <p
+              class="fragment"
+              style="
+                text-transform: lowercase;
+                font-family: Chewy, sans-serif;
+                color: navy;
+                text-align: left;
+                font-size: smaller;
+                font-style: italic;
+              "
+            >
+              Windows can't be tested, because buildkit spawns the
+              docker-container driver in privileged mode which isn't supported
+              on Windows
+            </p>
+
+            <p
+              class="fragment"
+              style="
+                text-transform: lowercase;
+                font-family: Chewy, sans-serif;
+                color: navy;
+                text-align: left;
+                font-size: smaller;
+                font-style: italic;
+              "
+            >
+              A solution would be to have Docker Desktop on the runner, but it
+              has to be figured out whether that's possible and what the effort
+              would be
+            </p>
+          </section>
           <section
             data-background-image="code.gif"
             data-background-opacity="0.6"
